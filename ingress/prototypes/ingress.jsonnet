@@ -23,8 +23,8 @@ local ingress = import 'ingress/ingress.libsonnet';
     },
     "spec": {
       "rules": [
-        ingress.rules(import 'param://host', [
-          ingress.path(
+        ingress.parts.rules(import 'param://host', [
+          ingress.parts.path(
             import 'param://path',
             import 'param://serviceName',
             import 'param://servicePort'
