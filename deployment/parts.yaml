@@ -1,0 +1,27 @@
+{
+  "name": "deployment",
+  "apiVersion": "0.0.1",
+  "kind": "ksonnet.io/parts",
+  "description": "Deployment Resource",
+  "author": "Metis Machine<devops@metismachine.com>",
+  "contributors": [
+    {
+      "name": "Travis Sturzl",
+      "email": "travis@metismachine.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetisMachine/ksonnet-parts"
+  },
+  "bugs": {
+    "url": "https://github.com/MetisMachine/ksonnet-parts/issues"
+  },
+  "keywords": [
+    "deployment",
+    "service",
+    "microservice",
+    "app"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "ingress",
+  "apiVersion": "0.0.1",
+  "kind": "ksonnet.io/parts",
+  "description": "Ingress Resource",
+  "author": "Metis Machine<devops@metismachine.com>",
+  "contributors": [
+    {
+      "name": "Travis Sturzl",
+      "email": "travis@metismachine.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetisMachine/ksonnet-parts"
+  },
+  "bugs": {
+    "url": "https://github.com/MetisMachine/ksonnet-parts/issues"
+  },
+  "keywords": [
+    "ingress",
+    "loadbalancer",
+    "microservice",
+    "proxy"
+  ],
+  "license": "MIT"
+}

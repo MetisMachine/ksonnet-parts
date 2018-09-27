@@ -1,0 +1,7 @@
+---
+apiVersion: '0.1'
+kind: ksonnet.io/registry
+libraries:
+  statefulset-service:
+    version: master
+    path: statefulset-service
