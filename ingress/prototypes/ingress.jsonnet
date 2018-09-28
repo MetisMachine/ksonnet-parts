@@ -9,7 +9,7 @@
 // @optionalParam servicePort number 80 Port for the service
 // @optionalParam path string / Path for routing rule
 
-local ingress = import 'ingress/ingress.libsonnet';
+local ingress = import 'parts/ingress/ingress.libsonnet';
 
 [
   {
