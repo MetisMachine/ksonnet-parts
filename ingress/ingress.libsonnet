@@ -1,6 +1,6 @@
 {
   parts:: {
-    rules(host, paths):: {
+    rule(host, paths):: {
       host: host,
       http: {
         paths: paths
