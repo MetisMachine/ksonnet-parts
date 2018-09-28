@@ -101,8 +101,9 @@
           spec: {
             accessModes: [import 'param://accessMode'],
             resources: {
-              requests:
+              requests: {
                 storage: import 'param://storageSize'
+              }
             }
           }
         }
