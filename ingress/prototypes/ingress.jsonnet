@@ -13,25 +13,24 @@ local ingress = import 'parts/ingress/ingress.libsonnet';
 
 [
   {
-    "apiVersion": "extensions/v1beta1",
-    "kind": "Ingress",
-    "metadata": {
-      "name": import 'param://name',
-      "annotations": {
-        "kubernetes.io/ingress.class": import 'param://type'
+    apiVersion: 'extensions/v1beta1',
+    kind: 'Ingress',
+    metadata: {
+      name: import 'param://name',
+      annotations: {
+        'kubernetes.io/ingress.class': import 'param://type',
       },
     },
-    "spec": {
-      "rules": [
+    spec: {
+      rules: [
         ingress.parts.rule(import 'param://host', [
           ingress.parts.path(
             import 'param://path',
             import 'param://serviceName',
             import 'param://servicePort'
-          )
-        ])
-      ]
-    }
-  }
+          ),
+        ]),
+      ],
+    },
+  },
 ]
-

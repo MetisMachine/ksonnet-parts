@@ -15,63 +15,63 @@
 [
   {
     // required headless service for statefulset
-    "apiVersion": "v1",
-      "kind": "Service",
-      "metadata": {
-        "name": std.format("%s-discover", import 'param://name')
-      },
-      "spec": {
-        "ports": [
-          {
-            "port": import 'param://servicePort',
-            "targetPort": import 'param://containerPort'
-          }
-        ],
-        "selector": {
-          "app": import 'param://name'
+    apiVersion: 'v1',
+    kind: 'Service',
+    metadata: {
+      name: std.format('%s-discover', import 'param://name'),
+    },
+    spec: {
+      ports: [
+        {
+          port: import 'param://servicePort',
+          targetPort: import 'param://containerPort',
         },
-        clusterIp: null
-      }
+      ],
+      selector: {
+        app: import 'param://name',
+      },
+      clusterIp: null,
+    },
   },
   {
-    "apiVersion": "v1",
-      "kind": "Service",
-      "metadata": {
-        "name": import 'param://name'
-      },
-      "spec": {
-        "ports": [
-          {
-            "port": import 'param://servicePort',
-            "targetPort": import 'param://containerPort'
-          }
-        ],
-        "selector": {
-          "app": import 'param://name'
+    apiVersion: 'v1',
+    kind: 'Service',
+    metadata: {
+      name: import 'param://name',
+    },
+    spec: {
+      ports: [
+        {
+          port: import 'param://servicePort',
+          targetPort: import 'param://containerPort',
         },
-        "type": import 'param://type'
-      }
+      ],
+      selector: {
+        app: import 'param://name',
+      },
+      type: import 'param://type',
+    },
   },
 
   {
-    apiVersion: "apps/v1",
-    kind: "StatefulSet",
+    apiVersion: 'apps/v1',
+    kind: 'StatefulSet',
     metadata: {
-      name: import 'param://name'
+      name: import 'param://name',
     },
     spec: {
       selector: {
         matchLabels: {
-          app: import 'param://name'
-        }
+          app: import 'param://name',
+        },
       },
       serviceName: import 'param://name',
       replicas: import 'param://replicas',
       template: {
         metadata: {
           labels: {
-            app: import 'param://name'
-          }
+            app: import 'param://name',
+          },
         },
         spec: {
           containers: [
@@ -81,33 +81,33 @@
               ports: [
                 {
                   containerPort: import 'param://containerPort',
-                }
+                },
               ],
               volumeMounts: [
                 {
                   name: import 'param://name',
-                  mountPath: import 'param://mountPath'
-                }
-              ]
-            }
-          ]
-        }
+                  mountPath: import 'param://mountPath',
+                },
+              ],
+            },
+          ],
+        },
       },
       volumeClaimTemplates: [
         {
           metadata: {
-            name: import 'param://name'
+            name: import 'param://name',
           },
           spec: {
             accessModes: [import 'param://accessMode'],
             resources: {
               requests: {
-                storage: import 'param://storageSize'
-              }
-            }
-          }
-        }
-      ]
-    }
-  }
+                storage: import 'param://storageSize',
+              },
+            },
+          },
+        },
+      ],
+    },
+  },
 ]
